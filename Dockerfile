@@ -1,9 +1,9 @@
-FROM debian:bullseye-slim
+FROM debian:buster-slim
 LABEL org.opencontainers.image.authors="Kyle Wilcox <kyle@axds.co>" \
       org.opencontainers.image.url="https://github.com/axiom-data-science/rsync-server"
-ENV DEBIAN_FRONTEND noninteractive
-ENV LANG C.UTF-8
-ENV NOTVISIBLE "in users profile"
+ENV DEBIAN_FRONTEND=noninteractive
+ENV LANG=C.UTF-8
+ENV NOTVISIBLE="in users profile"
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends openssh-server rsync && \

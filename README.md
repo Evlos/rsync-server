@@ -1,6 +1,6 @@
 # rsync-server
 
-> Clone of https://hub.docker.com/axiom/rsync-server since it is gone.
+> Clone of https://hub.docker.com/axiom/rsync-server since it is gone 404.
 
 A `rsyncd`/`sshd` server in Docker. You know, for moving files.
 
