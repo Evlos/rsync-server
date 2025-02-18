@@ -23,7 +23,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            axiom/rsync-server
+            evlos/rsync-server
           tags: |
             type=raw,value=latest,enable=${{ github.ref_name == 'main' }}
             type=ref,event=branch,enable=${{ github.ref_name != 'main' }}
@@ -55,4 +55,4 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-          repository: axiom/rsync-server
+          repository: evlos/rsync-server
