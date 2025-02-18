@@ -1,5 +1,7 @@
 # rsync-server
 
+> Clone of https://hub.docker.com/axiom/rsync-server since it is gone.
+
 A `rsyncd`/`sshd` server in Docker. You know, for moving files.
 
 ## Quickstart
@@ -14,7 +16,7 @@ docker run \
     -e USERNAME=user \
     -e PASSWORD=someSecurePassword_NOT_THIS \
     -v /your/public.key:/root/.ssh/authorized_keys \
-    axiom/rsync-server:latest
+    evlos/rsync-server:latest
 ```
 
 **You must set a password via `PASSWORD` or `PASSWORD_FILE`, even if you are using key authentication.**
@@ -80,13 +82,13 @@ Variable options (on run)
 ### Simple server on port 873
 
 ```shell
-docker run -p 873:873 -e PASSWORD=changeme axiom/rsync-server:latest
+docker run -p 873:873 -e PASSWORD=changeme evlos/rsync-server:latest
 ```
 
 ### Use a volume for the default `/data`
 
 ```shell
-docker run -p 873:873 -e PASSWORD=seriouslychangeme -v /your/folder:/data axiom/rsync-server:latest
+docker run -p 873:873 -e PASSWORD=seriouslychangeme -v /your/folder:/data evlos/rsync-server:latest
 ```
 
 ### Set a username and password
@@ -97,7 +99,7 @@ docker run \
     -v /your/folder:/data \
     -e USERNAME=admin \
     -e PASSWORD=imnotkidding \
-    axiom/rsync-server:latest
+    evlos/rsync-server:latest
 ```
 
 ### Set password via file
@@ -109,7 +111,7 @@ docker run \
     -v ./password-file-with-secure-permissions:/etc/rsyncd/password:ro \
     -e USERNAME=admin \
     -e PASSWORD_FILE=/etc/rsyncd/password \
-    axiom/rsync-server:latest
+    evlos/rsync-server:latest
 ```
 
 ### Run on a custom port
@@ -120,7 +122,7 @@ docker run \
     -v /your/folder:/data \
     -e USERNAME=admin \
     -e PASSWORD=plzchng \
-    axiom/rsync-server:latest
+    evlos/rsync-server:latest
 ```
 
 ```shell
@@ -138,7 +140,7 @@ docker run \
     -e USERNAME=admin \
     -e PASSWORD=yougetitnow \
     -e VOLUME=/myvolume \
-    axiom/rsync-server:latest
+    evlos/rsync-server:latest
 ```
 
 ```shell
@@ -157,7 +159,7 @@ docker run \
     -e PASSWORD=hopesoanyway \
     -e VOLUME=/myvolume \
     -e ALLOW=192.168.24.0/24 \
-    axiom/rsync-server:latest
+    evlos/rsync-server:latest
 ```
 
 ### Over SSH
@@ -185,7 +187,7 @@ docker run \
     -e ALLOW=10.0.0.0/8 192.168.0.0/16 172.16.0.0/12 127.0.0.1/32 \
     -v /my/authorized_keys:/root/.ssh/authorized_keys \
     -p 9000:22 \
-    axiom/rsync-server:latest
+    evlos/rsync-server:latest
 ```
 
 ```shell
